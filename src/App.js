@@ -1,22 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Under Construction</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <BrowserRouter>
+    // <HashRouter>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+      </Routes>
+    // </HashRouter>
+    // </BrowserRouter>
   );
 }
 
