@@ -2,16 +2,16 @@ import './App.css';
 import { Route, Routes} from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="about" element={<About/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
