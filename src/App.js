@@ -2,16 +2,19 @@ import './App.css';
 import { Route ,Switch} from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
-import {HashRouter as Router} from 'react-router-dom';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route exact path="/about">
+          <About/>
+        </Route>
       </Switch>
-    </Router>
+    </>
   );
 }
 
