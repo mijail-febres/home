@@ -8,8 +8,8 @@ const App = () => {
     // <BrowserRouter>
     // <HashRouter>
       <Routes>
-        <Route path='/home' element={<Home/>} />
-        <Route path='/about' element={<About/>} />
+        <Route exact path='/home' element={<Home/>} />
+        <Route exact path='/about' element={<About/>} />
       </Routes>
     // </HashRouter>
     // </BrowserRouter>
