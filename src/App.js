@@ -2,7 +2,7 @@ import './App.css';
 import { Route ,Switch} from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {HashRouter as Router} from 'react-router-dom';
 
 const App = () => {
   return (
