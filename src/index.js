@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter as Router} from 'react-router-dom';
+import {GlobalStyle, defaultTheme} from "./GlobalStyles/Styles";
+import {ThemeProvider} from "styled-components";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <ThemeProvider theme={defaultTheme}>
+    <GlobalStyle/>
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

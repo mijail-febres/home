@@ -1,8 +1,16 @@
+import HomeContainer from "./HomeStyles";
+import Header from "../../Components/Header/Header";
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home under construction</h1>
-        </div>
+        <HomeContainer>
+            <div id='headerContainer'>
+                <Header/>
+            </div>
+            <div id='bodyContainer'>
+                <h1>Home under construction</h1>
+            </div>
+        </HomeContainer>
     )
 }
 
