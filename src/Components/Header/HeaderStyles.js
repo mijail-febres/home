@@ -8,13 +8,7 @@ const HeaderContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    * {
-        border: none;
-        padding: none;
-        display: flex;
-        /* flex-direction: column; */
-        box-sizing: content-box;
-    }
+    box-sizing: border-box;
 
     .buttonCategories {
         transition: 0.5s;
