@@ -1,28 +1,35 @@
-import React from "react";
-import HeaderContainer from "./HeaderStyles";
+import React, {useState} from "react";
 import { useHistory } from "react-router";
+import HeaderContainer, {TabButton} from "./HeaderStyles";
 
 const Header = (props) => {
+    const tabs = ['/', '/repos', '/publications', '/about'];
+    const tabName = ['Home', 'Repos', 'Publications', 'About Me'];
+    const [tabStatus, setTabStatus] = useState([true, false, false, false]);
+
     const history = useHistory();
 
-    const handleClickHome = () => {
-        history.push('/');
-    }
-    const handleClickPublications = () => {
-        history.push('/publications');
-    }
-    const handleClickRepos = () => {
-        history.push('/repos');
-    }
-    const handleClickAbout = () => {
-        history.push('/about');
-    }
+    const handleClickOnTab = (ind) => {
+        let newStatus = new Array(tabStatus.length).fill(false);
+        newStatus[ind] = true;
+        setTabStatus(newStatus);
+        history.push(tabs[ind])
+    } 
+
     return (
         <HeaderContainer>
-            <button className='buttonCategories' onClick={handleClickHome}>Home</button>
-            <button className='buttonCategories' onClick={handleClickRepos}>Repos</button>
-            <button className='buttonCategories' onClick={handleClickPublications}>Publications</button>
-            <button className='buttonCategories' onClick={handleClickAbout}>About me</button>
+            {tabs.map((tab,ind) => {
+                return (
+                    <TabButton
+                        key={ind}
+                        className='buttonCategories'
+                        onClick={() => handleClickOnTab(ind)}
+                        tabStatus={tabStatus[ind]}
+                    >
+                        {tabName[ind]}
+                    </TabButton>
+                )
+            })}
         </HeaderContainer>
     )
 }
